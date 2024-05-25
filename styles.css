@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ffe5b4, #add8e6);  /* Peach to light blue gradient background */
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+h1 {
+    margin: 0 0 20px;
+    color: #333;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+#new-task {
+    width: calc(100% - 52px);
+    padding: 10px;
+    border: 1px solid #ccd1d9;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: #e1f5fe;
+    color: #333;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background: #8bc34a;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #7cb342;
+}
+
+button:focus {
+    outline: 2px solid #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    transition: padding 0.3s;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Ensure buttons are spaced apart */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccd1d9;
+    transition: border-bottom-color 0.3s, background-color 0.3s;
+}
+
+li .task-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+li.checked .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+li .button-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;  /* Add space between buttons */
+}
+
+li button {
+    background: #ff5252;
+    transition: background-color 0.3s;
+}
+
+li button:hover {
+    background: #ff1744;
+}
+
+li button:focus {
+    outline: 2px solid #333;
+}
+
+li .edit-button {
+    background: #ffeb3b;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+li .edit-button:hover {
+    background: #fbc02d;
+}
+
+li .edit-button:focus {
+    outline: 2px solid #333;
+}
+
+.checkbox {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.checkbox:hover {
+    transform: scale(1.1);
+}
+
+.checkbox:focus {
+    outline: 2px solid #333;
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #new-task {
+        width: calc(100% - 42px);
+        margin-right: 5px;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(to right, #2e2e2e, #444);  /* Darker gradient for dark mode */
+        color: #f0f0f0;
+    }
+
+    .container {
+        background: #444;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        color: #f0f0f0;
+    }
+
+    #new-task {
+        background-color: #555;
+        border-color: #666;
+        color: #f0f0f0;
+    }
+
+    li {
+        border-bottom-color: #666;
+    }
+
+    li.checked .task-text {
+        color: #bbb;
+    }
+}
